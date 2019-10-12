@@ -170,6 +170,18 @@ else ifeq ($(platform), classic_armv7_a7)
 	endif
 #######################################
 
+else ifeq ($(platform), ps2)
+	TARGET := $(TARGET_NAME)_libretro_$(platform).a
+	CC = ee-gcc$(EXE_EXT)
+	CXX = ee-g++$(EXE_EXT)
+	AR = ee-ar$(EXE_EXT)
+	STATIC_LINKING = 1
+	LOAD_FROM_MEMORY_TEST = 0
+	FLAGS += -G0
+	CFLAGS += -mno-abicalls -fno-pic -fno-builtin -fno-exceptions -ffunction-sections
+   CFLAGS += -G0 -DPS2 -Ips2/
+	STATIC_LINKING := 1
+
 else ifeq ($(platform), psp1)
 	TARGET := $(TARGET_NAME)_libretro_$(platform).a
 	CC = psp-gcc$(EXE_EXT)
