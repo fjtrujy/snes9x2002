@@ -177,9 +177,8 @@ else ifeq ($(platform), ps2)
 	AR = ee-ar$(EXE_EXT)
 	STATIC_LINKING = 1
 	LOAD_FROM_MEMORY_TEST = 0
-	FLAGS += -G0
 	CFLAGS += -mno-abicalls -fno-pic -fno-builtin -fno-exceptions -ffunction-sections
-   CFLAGS += -G0 -DPS2 -Ips2/
+   CFLAGS += -DPS2
 	STATIC_LINKING := 1
 
 else ifeq ($(platform), psp1)
