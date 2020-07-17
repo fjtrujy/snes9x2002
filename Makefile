@@ -177,7 +177,7 @@ else ifeq ($(platform), ps2)
 	AR = ee-ar$(EXE_EXT)
 	STATIC_LINKING = 1
 	LOAD_FROM_MEMORY_TEST = 0
-	CFLAGS += -mno-abicalls -fno-pic -fno-builtin -fno-exceptions -ffunction-sections
+	CFLAGS += -mno-abicalls -fno-pic -fno-builtin -fno-exceptions
    CFLAGS += -DPS2
 	STATIC_LINKING := 1
 
@@ -346,7 +346,7 @@ LIBRETRO_DIR := ./libretro
 ifeq ($(DEBUG), 1)
 DEFINES += -O0 -g
 else
-DEFINES += -O2 -DNDEBUG=1
+DEFINES += -O3 -DNDEBUG=1
 endif
 
 LDFLAGS += $(LIBM)
