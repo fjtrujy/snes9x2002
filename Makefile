@@ -172,9 +172,9 @@ else ifeq ($(platform), classic_armv7_a7)
 
 else ifeq ($(platform), ps2)
 	TARGET := $(TARGET_NAME)_libretro_$(platform).a
-	CC = ee-gcc$(EXE_EXT)
-	CXX = ee-g++$(EXE_EXT)
-	AR = ee-ar$(EXE_EXT)
+	CC = mips64r5900el-ps2-elf-gcc$(EXE_EXT)
+	CXX = mips64r5900el-ps2-elf-g++$(EXE_EXT)
+	AR = mips64r5900el-ps2-elf-ar$(EXE_EXT)
 	STATIC_LINKING = 1
 	LOAD_FROM_MEMORY_TEST = 0
 	CFLAGS += -mno-abicalls -fno-pic -fno-builtin -fno-exceptions
